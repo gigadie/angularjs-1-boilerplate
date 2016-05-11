@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang=""
+	  ng-app="App">
+	
+	<head>
+
+		<title>AngularJS Boilerplate</title>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+		<!-- jQuery [optional] -->
+		<script src="https://code.jquery.com/jquery-1.12.3.min.js"
+				integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="
+				crossorigin="anonymous"></script>
+
+		<!-- Bootstrap 3.3.6 [optional] -->
+		<link rel="stylesheet" 
+			  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+			  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+			  crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+				integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+				crossorigin="anonymous"></script>
+
+		<!-- CSS style -->
+		<link rel="stylesheet" href="./style/style.css?<%= buildLabel %>">
+
+		<!-- AngularJS main code -->
+		<script src="./js/angularjs.all.js?<%= buildLabel %>"></script>
+
+	</head>
+	
+	<body>
+
+		<div class="container">
+
+			<!-- DYNAMIC CONTENT BASED ON ROUTES -->
+			<div ui-view></div>
+
+		</div>
+		
+	</body>
+
+</html>

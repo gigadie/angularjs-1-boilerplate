@@ -1,0 +1,104 @@
+{
+	// Excludes
+	"excludeFiles": [
+		"node_modules/**",
+		"bower_components/**"
+	],
+	// Requires
+	"requireCurlyBraces": [
+		"if",
+		"else",
+		"for",
+		"while",
+		"do",
+		"try",
+		"catch"
+	],
+	"requireOperatorBeforeLineBreak": true,
+	"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+	"maximumLineLength": {
+		"value": 120,
+		"allowComments": true,
+		"allowRegex": true
+	},
+	"validateIndentation": "\t",
+	"validateQuoteMarks": {
+		"mark": "'",
+		"escape": true
+	},
+	"requireSpaceAfterKeywords": [
+		"if",
+		"else",
+		"for",
+		"while",
+		"do",
+		"switch",
+		"return",
+		"try",
+		"catch",
+		"typeof",
+		"case"
+	],
+	"requireSpaceBeforeBlockStatements": true,
+	"requireSpaceBeforeBinaryOperators": [
+		"=", "+=", "-=", "*=", "/=", "%=", "<<=", ">>=", ">>>=",
+		"&=", "|=", "^=", "+=",
+
+		"+", "-", "*", "/", "%", "<<", ">>", ">>>", "&",
+		"|", "^", "&&", "||", "===", "==", ">=",
+		"<=", "<", ">", "!=", "!=="
+	],
+	"requireSpaceAfterBinaryOperators": true,
+	"requireSpacesInConditionalExpression": true,
+	"requireParenthesesAroundIIFE": true,
+	"requireLineFeedAtFileEnd": true,
+	"requireBlocksOnNewline": 1,
+	"requireCommaBeforeLineBreak": null,
+	"requireDotNotation": null,
+	"requireSpaceAfterLineComment": true,
+	"jsDoc": {
+		"checkAnnotations": true,
+		"checkParamNames": true,
+		"requireParamTypes": true,
+		"checkReturnTypes": true,
+		"checkTypes": true
+	},
+	"requireSpacesInFunctionExpression": {
+		"beforeOpeningCurlyBrace": true
+	},
+	// Disallows
+	"disallowMultipleLineStrings": true,
+	"disallowMixedSpacesAndTabs": true,
+	"disallowTrailingWhitespace": true,
+	"disallowSpaceAfterPrefixUnaryOperators": true,
+	"disallowMultipleVarDecl": {
+		"allExcept": ["undefined"]
+	},
+	"disallowSpacesInsideObjectBrackets": "all",
+	"disallowSpacesInsideArrayBrackets": "all",
+	"disallowSpacesInsideParentheses": true,
+	"disallowSpaceBeforePostfixUnaryOperators": [
+		"++",
+		"--"
+	],
+	"disallowSpaceAfterKeywords": [
+		"void"
+	],
+	"disallowSpacesInCallExpression": true,
+	"disallowEmptyBlocks": {
+	  "allExcept": [
+		"comments"
+	  ]
+	},
+	"disallowSpacesInFunctionExpression": {
+		"beforeOpeningRoundBrace": true
+	},
+	"disallowMultipleLineBreaks": true,
+	"disallowCommaBeforeLineBreak": null,
+	"disallowDanglingUnderscores": null,
+	"disallowTrailingComma": null,
+	"disallowKeywordsOnNewLine": [
+		"else"
+	],
+	"disallowNewlineBeforeBlockStatements": true
+}
