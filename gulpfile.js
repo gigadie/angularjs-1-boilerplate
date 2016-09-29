@@ -15,6 +15,8 @@ var gulpif = require('gulp-if');
 var runSequence = require('run-sequence');
 var templateCache = require('gulp-angular-templatecache');
 var template = require('gulp-template');
+var argv = require('yargs').argv;
+var replace = require('gulp-replace-task');
 
 // Config
 var now = new Date();
@@ -235,3 +237,61 @@ gulp.task('test:debug', function(done) {
 		configFile: __dirname + '/karma.conf.unit.debug.js'
 	}, done).start();
 });
+
+
+// Generators
+
+// Component Generation -- Template in Base -- Will abstract to gulp plugin
+// to use: gulp g:component --name <insert name here>
+gulp.task('g:component', function(){
+	// Gets structure from base
+
+	// Copy base template file
+	gulp.src('./base/**/*.html')
+		.pipe(rename(argv.name+'.template.html'))
+		.pipe(gulp.dest('./js/src/'+argv.name+'/'));
+
+	// Copy component and rename 
+	gulp.src('./base/**/base.component.js')
+		.pipe(replace({
+	      patterns: [
+	        {
+	          match: /base/g,
+		      replacement: function () {
+		        return argv.name;
+		      }
+	        },
+	        {
+	          match: /Base/g,
+		      replacement: function () {
+		        return argv.name.charAt(0).toUpperCase() + argv.name.slice(1);
+		      }
+	        }
+	      ]
+	    }))
+		.pipe(rename(argv.name+'.component.js'))
+		.pipe(gulp.dest('./js/src/'+argv.name+'/'));
+
+	// Copy module and rename
+	gulp.src('./base/**/module.js')
+		.pipe(replace({
+		      patterns: [
+		        {
+		          match: /base/g,
+			      replacement: function () {
+			        return argv.name;
+			      }
+		        },
+		        {
+		          match: /Base/g,
+			      replacement: function () {
+			        return argv.name.charAt(0).toUpperCase() + argv.name.slice(1);
+			      }
+		        }
+		      ]
+		    }))
+		.pipe(gulp.dest('./js/src/'+argv.name+'/'));
+
+		console.log(argv.name+' component created');
+
+})
